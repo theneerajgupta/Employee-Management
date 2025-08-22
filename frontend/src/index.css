@@ -1,9 +1,17 @@
 @import 'tailwindcss';
 @plugin 'daisyui' {
-    themes: light --default, dark --prefersdark, cupcake;
-};
+    /* themes: light --default, dark --prefersdark, cupcake; */
+    themes: corporate --default;
+  };
 
 body {
   @apply bg-base-200;
 }
 
+font {
+  @apply font-sans;
+}
+
+h1 {
+  @apply text-3xl;
+}
