@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import '../index.css'
 interface FormData {
   firstName: string;
   lastName: string;
@@ -35,11 +35,14 @@ const TestLoginForm: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card w-[1000px]">
         <div className="card-body items-center text-center">
-          <h2 className="card-title justify-center">Test Signup</h2>
-          <form onSubmit={handleSubmit} className="w-full grid grid-cols-1 gap-4">
-            <div className="form-control mb-2">
+          <form onSubmit={handleSubmit}  className="p-6 gap-4 glass-card">
+            <div className="text-center mb-4">
+            <h2 className="card-title justify-center bold text-2xl">Test Signup</h2>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+                <div className="form-control mb-2">
               <label className="floating-label">
                 <span className="label-text">First Name</span>
               </label>
@@ -154,6 +157,9 @@ const TestLoginForm: React.FC = () => {
                 title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
               />
             </div>
+
+            </div>
+            
 
             <div className="card-actions justify-end">
               <button type="submit" className="btn btn-outline btn-info">
