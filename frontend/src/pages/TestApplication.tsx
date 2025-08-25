@@ -45,9 +45,11 @@
 // Documetn Upload
 // Submit & Review, Cancel -> Buttons
 
+import '../styles/glassMorphism.css';
+
 export const TestApplication = () => {
     return (
-        <div className="bg-base-200 w-full p-8 grid gap-4 min-w-[1000px] max-w-[80%]">
+        <div className="glass-card p-8 grid grid-cols-1 gap-8 w-[1000px]">
             <div>
                 <h1>Test Application</h1>
                 <p>
@@ -56,13 +58,13 @@ export const TestApplication = () => {
                 </p>
             </div>
 
-            <form action="">
-                <fieldset className="form-control bg-base-200 border-base-300 rounded-box border p-4 pb-6 gap-2">
+            <form action="" className="grid grid-cols-1 gap-8">
+                <fieldset className="form-control border-base-300 rounded-box border p-4 pb-6 gap-2">
                     <legend className="fieldset-legend text-base">
                         Employee Details
                     </legend>
 
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-2 gap-2">
                         <label className="input w-full validator">
                             <span className="label">First Name</span>
                             <input type="text" placeholder="John" />
@@ -101,12 +103,12 @@ export const TestApplication = () => {
                     </div>
                 </fieldset>
 
-                <fieldset className="form-control bg-base-200 border-base-300 rounded-box border p-4 pb-6 gap-2">
+                <fieldset className="form-control border-base-300 rounded-box border p-4 pb-6 gap-2">
                     <legend className="fieldset-legend text-base">
                         Address
                     </legend>
 
-                    <div className="grid grid-cols-3 gap-2">
+                    <div className="grid grid-cols-2 gap-2">
                         <input
                             type="text"
                             placeholder="Addrss Line 1"
@@ -117,20 +119,6 @@ export const TestApplication = () => {
                             type="text"
                             placeholder="Addrss Line 2"
                             className="input w-full"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Addrss Line 3"
-                            className="input w-full"
-                        />
-                        <input
-                            type="text"
-                            placeholder="Pin Code"
-                            className="input w-full"
-                            pattern="[0-9]*"
-                            minlength="5"
-                            maxlength="6"
-                            required
                         />
                         <select
                             defaultValue="Select State"
@@ -148,16 +136,99 @@ export const TestApplication = () => {
                             defaultValue="Select Country"
                             className="select w-full"
                         >
-                            <option disabled={true}>India</option>
-                            <option>Japan</option>
+                            <option disabled={true}>Select Country</option>
+                            <option>India</option>
                             <option>United States of America</option>
                             <option>Canada</option>
                             <option>Denmark</option>
                             <option>Brazil</option>
                         </select>
+                        <input
+                            type="text"
+                            placeholder="City"
+                            className="input w-full"
+                        />
+                        <input
+                            type="text"
+                            placeholder="Pin Code"
+                            className="input w-full"
+                            pattern="[0-9]*"
+                            minlength="5"
+                            maxlength="6"
+                            required
+                        />
                     </div>
                 </fieldset>
 
+                <fieldset className="form-control border-base-300 rounded-box border p-4 pb-6 gap-2">
+                    <legend className="fieldset-legend text-base">
+                       Application Details 
+                    </legend>
+
+                    <div className="grid grid-cols-1 gap-2">
+                         <select
+                            defaultValue="Select Application Type"
+                            className="select w-full"
+                        >
+                            <option disabled={true}>Select Application Type</option>
+                            <option>Peraonal Profile Setup</option>
+                            <option>Travel Approval Request</option>
+                            <option>Workplace Harassment Complaint</option>
+                            <option>Leave Request & Salary Advance</option>
+                            <option>Equipment Purchase</option>
+                            <option>Expense Reimbursement</option>
+                        </select> 
+                        <textarea className="textarea w-full h-24" placeholder="Please provide detailed information regarding your appeal..."></textarea>
+                        <div className="grid grid-cols-2 gap-2 mt-4">
+                            <div className="grid grid-cols-1 gap-2 ml-4">
+                                <h3>Payment Mode</h3>
+                                <label className="cursor-pointer label">
+                                    <input type="radio" name="radio-payment" className="radio radio-neutral" />
+                                    <span className="label-text">Cash</span>
+                                </label>
+                                <label className="cursor-pointer label">
+                                    <input type="radio" name="radio-payment" className="radio radio-neutral" />
+                                    <span className="label-text">Credit Card</span>
+                                </label>
+                                <label className="cursor-pointer label">
+                                    <input type="radio" name="radio-payment" className="radio radio-neutral" />
+                                    <span className="label-text">UPI</span>
+                                </label>
+                            </div> 
+                            <div className="grid grid-cols-1 gap-2 ml-4">
+                                <h3>Communication Mode</h3>
+                                <label className="cursor-pointer label">
+                                    <input type="checkbox" className="checkbox checkbox-neutral" />
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <label className="cursor-pointer label">
+                                    <input type="checkbox" className="checkbox checkbox-neutral" />
+                                    <span className="label-text">SMS</span>
+                                </label>
+                                <label className="cursor-pointer label">
+                                    <input type="checkbox" className="checkbox checkbox-neutral" />
+                                    <span className="label-text">WhatsApp</span>
+                                </label>
+                                <label className="cursor-pointer label">
+                                    <input type="checkbox" className="checkbox checkbox-neutral" />
+                                    <span className="label-text">Pigeon</span>
+                                </label>
+                            </div>   
+                        </div>                        
+                    </div>
+                </fieldset>
+
+                <fieldset className="form-control border-base-300 rounded-box border p-4 pb-6 gap-2">
+                    <legend className="fieldset-legend text-base">
+                       Upload Documents 
+                    </legend>
+                    <div className="grid grid-cols-1 gap-2">
+                        <input type="file" className="file-input w-full" />
+                        <input type="file" className="file-input w-full" />
+                        <input type="file" className="file-input w-full" />
+                    </div>
+                </fieldset>
+                
                 <button type="submit" className="btn btn-primary">
                     Submit
                 </button>
